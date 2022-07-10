@@ -4,6 +4,7 @@ const path = require( 'path' );
 
 // create express application
 const app = express();
+const PORT = process.env.PORT || 9000;
 
 // serve static assets
 app.use(express.static( path.resolve( __dirname, './build' ) ) );
@@ -24,6 +25,6 @@ app.use( '*', ( req, res ) => {
 } );
 
 // run express server on port 9000
-app.listen( '9000', () => {
+app.listen( PORT , () => {
     console.log( 'Express server started at http://localhost:9000' );
 } );
