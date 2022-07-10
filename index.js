@@ -6,13 +6,13 @@ const path = require( 'path' );
 const app = express();
 
 // serve static assets
-app.use(express.static( path.resolve( __dirname, '../build' ) ) );
+app.use(express.static( path.resolve( __dirname, './build' ) ) );
 
 // for any other requests, send `index.html` as a response
 app.use( '*', ( req, res ) => {
 
     // read `index.html` file
-    let indexHTML = fs.readFileSync( path.resolve( __dirname, '../build/index.html' ), {
+    let indexHTML = fs.readFileSync( path.resolve( __dirname, './build/index.html' ), {
         encoding: 'utf8',
     } );
 
